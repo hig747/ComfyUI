@@ -1647,7 +1647,9 @@ MonoBehaviour:
   pInput: {fileID: 1685289731}
   nInput: {fileID: 57579371}
   promptJsonInput: {fileID: 1602956171}
-  promptJson: "{   \"3\": {     \"inputs\": {       \"seed\": 446298019143441,      
+  humanImage: human1.png
+  bgImage: bg.png
+  promptJson: "{   \"3\": {     \"inputs\": {       \"seed\": 123081103890168,      
     \"steps\": 30,       \"cfg\": 2,       \"sampler_name\": \"dpmpp_sde\",      
     \"scheduler\": \"karras\",       \"denoise\": 0.5,       \"model\": [        
     \"25\",         0       ],       \"positive\": [         \"24\",         0      
@@ -1667,51 +1669,45 @@ MonoBehaviour:
     {       \"title\": \"VAE Decode\"     }   },   \"9\": {     \"inputs\": {      
     \"filename_prefix\": \"ComfyUI\",       \"images\": [         \"8\",        
     0       ]     },     \"class_type\": \"SaveImage\",     \"_meta\": {       \"title\":
-    \"Save Image\"     }   },   \"10\": {     \"inputs\": {       \"image\": \"human.png\",      
-    \"upload\": \"image\"     },     \"class_type\": \"Load image with metadata [Crystools]\",    
-    \"_meta\": {       \"title\": \"\U0001FA9B Load image with metadata\"     }  
-    },   \"13\": {     \"inputs\": {       \"image\": [         \"10\",         0      
-    ]     },     \"class_type\": \"Get resolution [Crystools]\",     \"_meta\": {      
-    \"title\": \"\U0001FA9B Get resolution\"     }   },   \"15\": {     \"inputs\":
-    {       \"width\": 512,       \"height\": 512,       \"interpolation\": \"nearest\",      
-    \"method\": \"stretch\",       \"condition\": \"always\",       \"multiple_of\":
-    0,       \"image\": [         \"10\",         0       ]     },     \"class_type\":
-    \"ImageResize+\",     \"_meta\": {       \"title\": \"\U0001F527 Image Resize\"    
-    }   },   \"16\": {     \"inputs\": {       \"image\": [         \"15\",        
-    0       ]     },     \"class_type\": \"Get resolution [Crystools]\",     \"_meta\":
-    {       \"title\": \"\U0001FA9B Get resolution\"     }   },   \"24\": {     \"inputs\":
-    {       \"multiplier\": 0.18215,       \"positive\": [         \"6\",        
-    0       ],       \"negative\": [         \"7\",         0       ],       \"vae\":
-    [         \"4\",         2       ],       \"foreground\": [         \"31\",        
-    0       ],       \"opt_background\": [         \"44\",         0       ]    
-    },     \"class_type\": \"ICLightConditioning\",     \"_meta\": {       \"title\":
-    \"IC-Light Conditioning\"     }   },   \"25\": {     \"inputs\": {       \"model_path\":
-    \"IC-Light\\\\iclight_sd15_fbc.safetensors\",       \"model\": [         \"4\",        
-    0       ]     },     \"class_type\": \"LoadAndApplyICLightUnet\",     \"_meta\":
-    {       \"title\": \"Load And Apply IC-Light\"     }   },   \"28\": {     \"inputs\":
-    {       \"light_position\": \"Top Left Light\",       \"multiplier\": 1,      
-    \"start_color\": \"#FFFFFF\",       \"end_color\": \"#000000\",       \"width\":
-    [         \"15\",         1       ],       \"height\": [         \"15\",        
-    2       ],       \"batch_size\": 1     },     \"class_type\": \"LightSource\",    
-    \"_meta\": {       \"title\": \"Simple Light Source\"     }   },   \"29\": {    
-    \"inputs\": {       \"pixels\": [         \"28\",         0       ],       \"vae\":
-    [         \"4\",         2       ]     },     \"class_type\": \"VAEEncode\",    
-    \"_meta\": {       \"title\": \"VAE Encode\"     }   },   \"30\": {     \"inputs\":
-    {       \"width\": [         \"15\",         1       ],       \"height\": [        
-    \"15\",         2       ],       \"batch_size\": 1     },     \"class_type\":
-    \"EmptyLatentImage\",     \"_meta\": {       \"title\": \"Empty Latent Image\"    
-    }   },   \"31\": {     \"inputs\": {       \"pixels\": [         \"15\",        
-    0       ],       \"vae\": [         \"4\",         2       ]     },     \"class_type\":
+    \"Save Image\"     }   },   \"13\": {     \"inputs\": {       \"image\": [        
+    \"50\",         0       ]     },     \"class_type\": \"Get resolution [Crystools]\",    
+    \"_meta\": {       \"title\": \"\U0001FA9B Get resolution\"     }   },   \"15\":
+    {     \"inputs\": {       \"width\": 512,       \"height\": 512,       \"interpolation\":
+    \"nearest\",       \"method\": \"stretch\",       \"condition\": \"always\",      
+    \"multiple_of\": 0,       \"image\": [         \"50\",         0       ]    
+    },     \"class_type\": \"ImageResize+\",     \"_meta\": {       \"title\": \"\U0001F527
+    Image Resize\"     }   },   \"16\": {     \"inputs\": {       \"image\": [        
+    \"15\",         0       ]     },     \"class_type\": \"Get resolution [Crystools]\",    
+    \"_meta\": {       \"title\": \"\U0001FA9B Get resolution\"     }   },   \"24\":
+    {     \"inputs\": {       \"multiplier\": 0.18215,       \"positive\": [        
+    \"6\",         0       ],       \"negative\": [         \"7\",         0      
+    ],       \"vae\": [         \"4\",         2       ],       \"foreground\": [        
+    \"31\",         0       ],       \"opt_background\": [         \"44\",        
+    0       ]     },     \"class_type\": \"ICLightConditioning\",     \"_meta\":
+    {       \"title\": \"IC-Light Conditioning\"     }   },   \"25\": {     \"inputs\":
+    {       \"model_path\": \"IC-Light\\\\iclight_sd15_fbc.safetensors\",       \"model\":
+    [         \"4\",         0       ]     },     \"class_type\": \"LoadAndApplyICLightUnet\",    
+    \"_meta\": {       \"title\": \"Load And Apply IC-Light\"     }   },   \"29\":
+    {     \"inputs\": {       \"pixels\": [         \"15\",         0       ],      
+    \"vae\": [         \"4\",         2       ]     },     \"class_type\": \"VAEEncode\",    
+    \"_meta\": {       \"title\": \"VAE Encode\"     }   },   \"31\": {     \"inputs\":
+    {       \"pixels\": [         \"15\",         0       ],       \"vae\": [        
+    \"4\",         2       ]     },     \"class_type\": \"VAEEncode\",     \"_meta\":
+    {       \"title\": \"VAE Encode\"     }   },   \"39\": {     \"inputs\": {      
+    \"console\": false,       \"display\": true,       \"prefix\": \"\"     },    
+    \"class_type\": \"Show any [Crystools]\",     \"_meta\": {       \"title\": \"\U0001FA9B
+    Show any value to console/display\"     }   },   \"43\": {     \"inputs\": {      
+    \"image\": \"bg.png\",       \"upload\": \"image\"     },     \"class_type\":
+    \"LoadImage\",     \"_meta\": {       \"title\": \"Load Image\"     }   },  
+    \"44\": {     \"inputs\": {       \"pixels\": [         \"43\",         0      
+    ],       \"vae\": [         \"4\",         2       ]     },     \"class_type\":
     \"VAEEncode\",     \"_meta\": {       \"title\": \"VAE Encode\"     }   },  
-    \"39\": {     \"inputs\": {       \"console\": false,       \"display\": true,      
-    \"prefix\": \"\"     },     \"class_type\": \"Show any [Crystools]\",     \"_meta\":
-    {       \"title\": \"\U0001FA9B Show any value to console/display\"     }   },  
-    \"43\": {     \"inputs\": {       \"image\": \"bg.png\",       \"upload\": \"image\"    
-    },     \"class_type\": \"LoadImage\",     \"_meta\": {       \"title\": \"Load
-    Image\"     }   },   \"44\": {     \"inputs\": {       \"pixels\": [        
-    \"43\",         0       ],       \"vae\": [         \"4\",         2       ]    
-    },     \"class_type\": \"VAEEncode\",     \"_meta\": {       \"title\": \"VAE
-    Encode\"     }   } }"
+    \"45\": {     \"inputs\": {       \"image\": \"human.png\",       \"upload\":
+    \"image\"     },     \"class_type\": \"LoadImage\",     \"_meta\": {       \"title\":
+    \"Load Image\"     }   },   \"50\": {     \"inputs\": {       \"image\": \"/view?subfolder=&type=input&filename=human.png\",      
+    \"keep_alpha_channel\": true,       \"output_mode\": false     },     \"class_type\":
+    \"LoadImageFromUrl\",     \"_meta\": {       \"title\": \"Load Image From URL\"    
+    }   } }"
 --- !u!114 &1687273305
 MonoBehaviour:
   m_ObjectHideFlags: 0

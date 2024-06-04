@@ -13,6 +13,9 @@ public class ComfyPromptCtr : MonoBehaviour
 {
 
     public InputField pInput,nInput,promptJsonInput;
+    public string humanImage = "human.png";
+    public string bgImage = "bg.png";
+
     private void Start()
     {
        // QueuePrompt("pretty man","watermark");
@@ -26,8 +29,14 @@ public class ComfyPromptCtr : MonoBehaviour
     {
         string url = "http://127.0.0.1:8188/prompt";
         string promptText = GeneratePromptJson();
-        promptText = promptText.Replace("Pprompt", positivePrompt);
-        promptText = promptText.Replace("Nprompt", negativePrompt);
+
+                promptText = promptText.Replace("Pprompt", positivePrompt);
+                promptText = promptText.Replace("Nprompt", negativePrompt);
+
+        promptText = promptText.Replace("human.png", humanImage);
+        promptText = promptText.Replace("bg.png", bgImage);
+
+
         Debug.Log(promptText);
 
         UnityWebRequest request = new UnityWebRequest(url, "POST");
