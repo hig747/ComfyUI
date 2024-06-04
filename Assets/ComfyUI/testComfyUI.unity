@@ -2034,7 +2034,7 @@ MonoBehaviour:
   humanImageInput: {fileID: 958905964}
   bgImageInput: {fileID: 2132279483}
   promptJsonInput: {fileID: 1602956171}
-  promptJson: "{   \"3\": {     \"inputs\": {       \"seed\": 123081103890168,      
+  promptJson: "{   \"3\": {     \"inputs\": {       \"seed\": 688078084196996,      
     \"steps\": 30,       \"cfg\": 2,       \"sampler_name\": \"dpmpp_sde\",      
     \"scheduler\": \"karras\",       \"denoise\": 0.5,       \"model\": [        
     \"25\",         0       ],       \"positive\": [         \"24\",         0      
@@ -2084,12 +2084,15 @@ MonoBehaviour:
     Show any value to console/display\"     }   },   \"43\": {     \"inputs\": {      
     \"image\": \"bg.png\",       \"upload\": \"image\"     },     \"class_type\":
     \"LoadImage\",     \"_meta\": {       \"title\": \"Load Image\"     }   },  
-    \"44\": {     \"inputs\": {       \"pixels\": [         \"43\",         0      
+    \"44\": {     \"inputs\": {       \"pixels\": [         \"52\",         0      
     ],       \"vae\": [         \"4\",         2       ]     },     \"class_type\":
     \"VAEEncode\",     \"_meta\": {       \"title\": \"VAE Encode\"     }   },  
     \"45\": {     \"inputs\": {       \"image\": \"human.png\",       \"upload\":
     \"image\"     },     \"class_type\": \"LoadImage\",     \"_meta\": {       \"title\":
     \"Load Image\"     }   },   \"50\": {     \"inputs\": {       \"image\": \"/view?subfolder=&type=input&filename=human.png\",      
+    \"keep_alpha_channel\": true,       \"output_mode\": false     },     \"class_type\":
+    \"LoadImageFromUrl\",     \"_meta\": {       \"title\": \"Load Image From URL\"    
+    }   },   \"52\": {     \"inputs\": {       \"image\": \"/view?subfolder=&type=input&filename=bg.png\",      
     \"keep_alpha_channel\": true,       \"output_mode\": false     },     \"class_type\":
     \"LoadImageFromUrl\",     \"_meta\": {       \"title\": \"Load Image From URL\"    
     }   } }"
