@@ -63,7 +63,7 @@ public void RequestFileName(string id){
     {
 // Step 1: Identify the part of the string that contains the "filename" key
         string keyToLookFor = "\"filename\":";
-        int startIndex = jsonString.IndexOf(keyToLookFor);
+        int startIndex = jsonString.LastIndexOf(keyToLookFor);
 
         if (startIndex == -1)
         {
@@ -73,8 +73,12 @@ public void RequestFileName(string id){
         // Adjusting startIndex to get the position right after the keyToLookFor
         startIndex += keyToLookFor.Length;
 
+
+
+
         // Step 2: Extract the substring starting from the "filename" key
         string fromFileName = jsonString.Substring(startIndex);
+
 
         // Assuming that filename value is followed by a comma (,)
         int endIndex = fromFileName.IndexOf(',');
