@@ -1,9 +1,9 @@
 {
   "3": {
     "inputs": {
-      "seed": 123081103890168,
+      "seed": 110540731249956,
       "steps": 30,
-      "cfg": 2,
+      "cfg": 1.5,
       "sampler_name": "dpmpp_sde",
       "scheduler": "karras",
       "denoise": 0.5,
@@ -40,7 +40,7 @@
   },
   "6": {
     "inputs": {
-      "text": "a girl",
+      "text": "Pprompt",
       "clip": [
         "4",
         1
@@ -53,7 +53,7 @@
   },
   "7": {
     "inputs": {
-      "text": "text, watermark",
+      "text": "Nprompt",
       "clip": [
         "4",
         1
@@ -107,8 +107,8 @@
   },
   "15": {
     "inputs": {
-      "width": 512,
-      "height": 512,
+      "width": 1024,
+      "height": 1024,
       "interpolation": "nearest",
       "method": "stretch",
       "condition": "always",
@@ -137,7 +137,7 @@
   },
   "24": {
     "inputs": {
-      "multiplier": 0.18215,
+      "multiplier": 0.5,
       "positive": [
         "6",
         0
@@ -220,16 +220,6 @@
       "title": "🪛 Show any value to console/display"
     }
   },
-  "43": {
-    "inputs": {
-      "image": "bg.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "Load Image"
-    }
-  },
   "44": {
     "inputs": {
       "pixels": [
@@ -246,20 +236,10 @@
       "title": "VAE Encode"
     }
   },
-  "45": {
-    "inputs": {
-      "image": "human.png",
-      "upload": "image"
-    },
-    "class_type": "LoadImage",
-    "_meta": {
-      "title": "Load Image"
-    }
-  },
   "50": {
     "inputs": {
-      "image": "/view?subfolder=&type=input&filename=human.png",
-      "keep_alpha_channel": true,
+      "image": "file://D:/Unity/ComfyUI/Assets/StreamingAssets/human.png",
+      "keep_alpha_channel": false,
       "output_mode": false
     },
     "class_type": "LoadImageFromUrl",
@@ -269,7 +249,7 @@
   },
   "52": {
     "inputs": {
-      "image": "/view?subfolder=&type=input&filename=bg+%282%29.png",
+      "image": "file://D:/Unity/ComfyUI/Assets/StreamingAssets/bg.png",
       "keep_alpha_channel": true,
       "output_mode": false
     },

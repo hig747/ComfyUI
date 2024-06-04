@@ -2034,8 +2034,8 @@ MonoBehaviour:
   humanImageInput: {fileID: 958905964}
   bgImageInput: {fileID: 2132279483}
   promptJsonInput: {fileID: 1602956171}
-  promptJson: "{   \"3\": {     \"inputs\": {       \"seed\": 688078084196996,      
-    \"steps\": 30,       \"cfg\": 8,       \"sampler_name\": \"dpmpp_sde\",      
+  promptJson: "{   \"3\": {     \"inputs\": {       \"seed\": 110540731249956,      
+    \"steps\": 30,       \"cfg\": 1.5,       \"sampler_name\": \"dpmpp_sde\",      
     \"scheduler\": \"karras\",       \"denoise\": 0.5,       \"model\": [        
     \"25\",         0       ],       \"positive\": [         \"24\",         0      
     ],       \"negative\": [         \"24\",         1       ],       \"latent_image\":
@@ -2043,12 +2043,12 @@ MonoBehaviour:
     \"_meta\": {       \"title\": \"KSampler\"     }   },   \"4\": {     \"inputs\":
     {       \"ckpt_name\": \"realisticVisionV51_v51VAE.safetensors\"     },     \"class_type\":
     \"CheckpointLoaderSimple\",     \"_meta\": {       \"title\": \"Load Checkpoint\"    
-    }   },   \"6\": {     \"inputs\": {       \"text\": \"a girl\",       \"clip\":
+    }   },   \"6\": {     \"inputs\": {       \"text\": \"Pprompt\",       \"clip\":
     [         \"4\",         1       ]     },     \"class_type\": \"CLIPTextEncode\",    
     \"_meta\": {       \"title\": \"CLIP Text Encode (Prompt)\"     }   },   \"7\":
-    {     \"inputs\": {       \"text\": \"text, watermark\",       \"clip\": [        
-    \"4\",         1       ]     },     \"class_type\": \"CLIPTextEncode\",     \"_meta\":
-    {       \"title\": \"CLIP Text Encode (Prompt)\"     }   },   \"8\": {     \"inputs\":
+    {     \"inputs\": {       \"text\": \"Nprompt\",       \"clip\": [         \"4\",        
+    1       ]     },     \"class_type\": \"CLIPTextEncode\",     \"_meta\": {      
+    \"title\": \"CLIP Text Encode (Prompt)\"     }   },   \"8\": {     \"inputs\":
     {       \"samples\": [         \"3\",         0       ],       \"vae\": [        
     \"4\",         2       ]     },     \"class_type\": \"VAEDecode\",     \"_meta\":
     {       \"title\": \"VAE Decode\"     }   },   \"9\": {     \"inputs\": {      
