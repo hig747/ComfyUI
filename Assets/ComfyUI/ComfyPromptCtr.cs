@@ -12,9 +12,9 @@ public class ResponseData
 public class ComfyPromptCtr : MonoBehaviour
 {
 
-    public InputField pInput,nInput,promptJsonInput;
-    public string humanImage = "human.png";
-    public string bgImage = "bg.png";
+    public InputField pInput,nInput, humanImageInput,bgImageInput,promptJsonInput;
+
+
 
     private void Start()
     {
@@ -23,9 +23,9 @@ public class ComfyPromptCtr : MonoBehaviour
 
     public void QueuePrompt()
     {
-        StartCoroutine(QueuePromptCoroutine(pInput.text,nInput.text));
+        StartCoroutine(QueuePromptCoroutine(pInput.text,nInput.text, humanImageInput.text, bgImageInput.text  ));
     }
-    private IEnumerator QueuePromptCoroutine(string positivePrompt,string negativePrompt)
+    private IEnumerator QueuePromptCoroutine(string positivePrompt,string negativePrompt, string humanImage, string bgImage )
     {
         string url = "http://127.0.0.1:8188/prompt";
         string promptText = GeneratePromptJson();
