@@ -61,25 +61,42 @@ public void RequestFileName(string id){
     
     string ExtractFilename(string jsonString)
     {
-// Step 1: Identify the part of the string that contains the "filename" key
+        // Step 1: Identify the part of the string that contains the "filename" key
+        string OutputKey = "UnityExport_";
         string keyToLookFor = "\"filename\":";
-        int startIndex = jsonString.LastIndexOf(keyToLookFor);
-
-        if (startIndex == -1)
-        {
-            return "filename key not found";
-        }
-
-        // Adjusting startIndex to get the position right after the keyToLookFor
-        startIndex += keyToLookFor.Length;
 
 
+//        int startIndex = jsonString.LastIndexOf(keyToLookFor);
+        int startIndex = jsonString.IndexOf(OutputKey);
+
+        string jsonString2 = jsonString.Substring(startIndex);
 
 
-        // Step 2: Extract the substring starting from the "filename" key
+        /*
+                if (startIndex == -1)
+                {
+                    return "filename key not found";
+                }
+
+                // Adjusting startIndex to get the position right after the keyToLookFor
+                startIndex += OutputKey.Length;
+
+                string jsonString2 = jsonString.Substring(startIndex);
+
+                startIndex = jsonString2.IndexOf(keyToLookFor);
+
+                if (startIndex == -1)
+                {
+                    return "filename key not found";
+                }
+                startIndex += keyToLookFor.Length;
+
+
+                // Step 2: Extract the substring starting from the "filename" key
+                string fromFileName = jsonString2.Substring(startIndex);
+        */
+
         string fromFileName = jsonString.Substring(startIndex);
-
-
         // Assuming that filename value is followed by a comma (,)
         int endIndex = fromFileName.IndexOf(',');
 
