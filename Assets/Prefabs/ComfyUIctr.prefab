@@ -1,0 +1,300 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1017149671408762707
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8471946815976649825}
+  - component: {fileID: 5266195947984184518}
+  - component: {fileID: 5472946980653173867}
+  - component: {fileID: 6043158891505862295}
+  - component: {fileID: 4384160098087201732}
+  - component: {fileID: 4316891331438576607}
+  - component: {fileID: 5321332914737208611}
+  m_Layer: 0
+  m_Name: ComfyUIctr
+  m_TagString: MainCamera
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8471946815976649825
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017149671408762707}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!20 &5266195947984184518
+Camera:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017149671408762707}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
+  m_projectionMatrixMode: 1
+  m_GateFitMode: 2
+  m_FOVAxisMode: 0
+  m_Iso: 200
+  m_ShutterSpeed: 0.005
+  m_Aperture: 16
+  m_FocusDistance: 10
+  m_FocalLength: 50
+  m_BladeCount: 5
+  m_Curvature: {x: 2, y: 11}
+  m_BarrelClipping: 0.25
+  m_Anamorphism: 0
+  m_SensorSize: {x: 36, y: 24}
+  m_LensShift: {x: 0, y: 0}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: 0.3
+  far clip plane: 1000
+  field of view: 60
+  orthographic: 0
+  orthographic size: 5
+  m_Depth: -1
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_TargetDisplay: 0
+  m_TargetEye: 3
+  m_HDR: 1
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
+  m_ForceIntoRT: 0
+  m_OcclusionCulling: 1
+  m_StereoConvergence: 10
+  m_StereoSeparation: 0.022
+--- !u!81 &5472946980653173867
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017149671408762707}
+  m_Enabled: 1
+--- !u!114 &6043158891505862295
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017149671408762707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79945781b6eb3b469512ff72c92081f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pInput: {fileID: 0}
+  nInput: {fileID: 0}
+  humanImageInput: {fileID: 0}
+  bgImageInput: {fileID: 0}
+  cfgInput: {fileID: 0}
+  weightInput: {fileID: 0}
+  promptJsonInput: {fileID: 0}
+  promptJson: "{   \"2\": {     \"inputs\": {       \"ckpt_name\": \"dreamshaper_8.safetensors\"    
+    },     \"class_type\": \"CheckpointLoaderSimple\",     \"_meta\": {       \"title\":
+    \"Load Checkpoint\"     }   },   \"4\": {     \"inputs\": {       \"text\": \"UnityPprompt\",      
+    \"clip\": [         \"2\",         1       ]     },     \"class_type\": \"CLIPTextEncode\",    
+    \"_meta\": {       \"title\": \"CLIP Text Encode (Prompt)\"     }   },   \"5\":
+    {     \"inputs\": {       \"text\": \"UniyNprompt\",       \"clip\": [        
+    \"2\",         1       ]     },     \"class_type\": \"CLIPTextEncode\",     \"_meta\":
+    {       \"title\": \"CLIP Text Encode (Prompt)\"     }   },   \"7\": {     \"inputs\":
+    {       \"samples\": [         \"19\",         0       ],       \"vae\": [        
+    \"2\",         2       ]     },     \"class_type\": \"VAEDecode\",     \"_meta\":
+    {       \"title\": \"VAE Decode\"     }   },   \"19\": {     \"inputs\": {      
+    \"seed\": 1034487527166148,       \"steps\": 30,       \"cfg\": UnityCfg,      
+    \"sampler_name\": \"dpmpp_2m_sde\",       \"scheduler\": \"karras\",       \"denoise\":
+    1,       \"model\": [         \"235\",         0       ],       \"positive\":
+    [         \"77\",         0       ],       \"negative\": [         \"77\",        
+    1       ],       \"latent_image\": [         \"50\",         0       ]     },    
+    \"class_type\": \"KSampler\",     \"_meta\": {       \"title\": \"KSampler\"    
+    }   },   \"36\": {     \"inputs\": {       \"images\": [         \"7\",        
+    0       ]     },     \"class_type\": \"PreviewImage\",     \"_meta\": {      
+    \"title\": \"Preview Image\"     }   },   \"37\": {     \"inputs\": {       \"model_path\":
+    \"IC-Light\\\\iclight_sd15_fc.safetensors\",       \"model\": [         \"2\",        
+    0       ]     },     \"class_type\": \"LoadAndApplyICLightUnet\",     \"_meta\":
+    {       \"title\": \"Load And Apply IC-Light\"     }   },   \"42\": {     \"inputs\":
+    {       \"images\": [         \"53\",         0       ]     },     \"class_type\":
+    \"PreviewImage\",     \"_meta\": {       \"title\": \"Preview Image\"     }  
+    },   \"50\": {     \"inputs\": {       \"pixels\": [         \"205\",        
+    0       ],       \"vae\": [         \"2\",         2       ]     },     \"class_type\":
+    \"VAEEncode\",     \"_meta\": {       \"title\": \"VAE Encode\"     }   },  
+    \"53\": {     \"inputs\": {       \"width\": 512,       \"height\": 512,      
+    \"interpolation\": \"lanczos\",       \"method\": \"stretch\",       \"condition\":
+    \"always\",       \"multiple_of\": 0,       \"image\": [         \"273\",        
+    0       ]     },     \"class_type\": \"ImageResize+\",     \"_meta\": {      
+    \"title\": \"\U0001F527 Image Resize\"     }   },   \"77\": {     \"inputs\":
+    {       \"multiplier\": 0.18,       \"positive\": [         \"4\",         0      
+    ],       \"negative\": [         \"5\",         0       ],       \"vae\": [        
+    \"2\",         2       ],       \"foreground\": [         \"78\",         0      
+    ]     },     \"class_type\": \"ICLightConditioning\",     \"_meta\": {      
+    \"title\": \"IC-Light Conditioning\"     }   },   \"78\": {     \"inputs\": {      
+    \"pixels\": [         \"53\",         0       ],       \"vae\": [         \"2\",        
+    2       ]     },     \"class_type\": \"VAEEncode\",     \"_meta\": {       \"title\":
+    \"VAE Encode\"     }   },   \"146\": {     \"inputs\": {       \"factor\": 0.4,      
+    \"interpolation_mode\": \"bicubic\",       \"image\": [         \"78\",        
+    0       ]     },     \"class_type\": \"JWImageResizeByFactor\",     \"_meta\":
+    {       \"title\": \"Image Resize by Factor\"     }   },   \"204\": {     \"inputs\":
+    {       \"shape\": \"circle\",       \"frames\": 1,       \"location_x\": 120,      
+    \"location_y\": 125,       \"grow\": 0,       \"frame_width\": [         \"53\",        
+    1       ],       \"frame_height\": [         \"53\",         2       ],      
+    \"shape_width\": 256,       \"shape_height\": 512     },     \"class_type\":
+    \"CreateShapeMask\",     \"_meta\": {       \"title\": \"Create Shape Mask\"    
+    }   },   \"205\": {     \"inputs\": {       \"mask\": [         \"207\",        
+    0       ]     },     \"class_type\": \"MaskToImage\",     \"_meta\": {      
+    \"title\": \"Convert Mask to Image\"     }   },   \"206\": {     \"inputs\":
+    {       \"expand\": 0,       \"incremental_expandrate\": 0,       \"tapered_corners\":
+    true,       \"flip_input\": false,       \"blur_radius\": 11.700000000000001,      
+    \"lerp_alpha\": 1,       \"decay_factor\": 1,       \"fill_holes\": false,      
+    \"mask\": [         \"204\",         0       ]     },     \"class_type\": \"GrowMaskWithBlur\",    
+    \"_meta\": {       \"title\": \"Grow Mask With Blur\"     }   },   \"207\": {    
+    \"inputs\": {       \"min\": 0,       \"max\": 0.65,       \"mask\": [        
+    \"206\",         0       ]     },     \"class_type\": \"RemapMaskRange\",    
+    \"_meta\": {       \"title\": \"Remap Mask Range\"     }   },   \"208\": {    
+    \"inputs\": {       \"images\": [         \"205\",         0       ]     },    
+    \"class_type\": \"PreviewImage\",     \"_meta\": {       \"title\": \"Preview
+    Image\"     }   },   \"232\": {     \"inputs\": {       \"weight\": UnityWeight,      
+    \"weight_type\": \"linear\",       \"combine_embeds\": \"concat\",       \"start_at\":
+    0.1,       \"end_at\": 1,       \"embeds_scaling\": \"V only\",       \"model\":
+    [         \"37\",         0       ],       \"ipadapter\": [         \"236\",        
+    0       ],       \"image\": [         \"234\",         0       ],       \"clip_vision\":
+    [         \"233\",         0       ]     },     \"class_type\": \"IPAdapterAdvanced\",    
+    \"_meta\": {       \"title\": \"IPAdapter Advanced\"     }   },   \"233\": {    
+    \"inputs\": {       \"clip_name\": \"CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors\"    
+    },     \"class_type\": \"CLIPVisionLoader\",     \"_meta\": {       \"title\":
+    \"Load CLIP Vision\"     }   },   \"234\": {     \"inputs\": {       \"interpolation\":
+    \"LANCZOS\",       \"crop_position\": \"center\",       \"sharpening\": 0.15,      
+    \"image\": [         \"260\",         0       ]     },     \"class_type\": \"PrepImageForClipVision\",    
+    \"_meta\": {       \"title\": \"Prep Image For ClipVision\"     }   },   \"235\":
+    {     \"inputs\": {       \"model\": [         \"232\",         0       ]    
+    },     \"class_type\": \"DifferentialDiffusion\",     \"_meta\": {       \"title\":
+    \"Differential Diffusion\"     }   },   \"236\": {     \"inputs\": {       \"ipadapter_file\":
+    \"ip-adapter-plus_sd15.safetensors\"     },     \"class_type\": \"IPAdapterModelLoader\",    
+    \"_meta\": {       \"title\": \"IPAdapter Model Loader\"     }   },   \"259\":
+    {     \"inputs\": {       \"image\": \"bg1.png\",       \"upload\": \"image\"    
+    },     \"class_type\": \"LoadImage\",     \"_meta\": {       \"title\": \"Load
+    Image bg\"     }   },   \"260\": {     \"inputs\": {       \"width\": 512,      
+    \"height\": 512,       \"interpolation\": \"lanczos\",       \"method\": \"stretch\",      
+    \"condition\": \"always\",       \"multiple_of\": 0,       \"image\": [        
+    \"278\",         0       ]     },     \"class_type\": \"ImageResize+\",     \"_meta\":
+    {       \"title\": \"\U0001F527 Image Resize\"     }   },   \"269\": {     \"inputs\":
+    {       \"image\": \"soumen_4k.png\",       \"upload\": \"image\"     },    
+    \"class_type\": \"LoadImage\",     \"_meta\": {       \"title\": \"Load Image
+    face\"     }   },   \"270\": {     \"inputs\": {       \"factor\": 1,       \"interpolation_mode\":
+    \"bicubic\",       \"image\": [         \"277\",         0       ]     },    
+    \"class_type\": \"JWImageResizeByFactor\",     \"_meta\": {       \"title\":
+    \"Image Resize by Factor\"     }   },   \"273\": {     \"inputs\": {       \"sam_model\":
+    \"sam_vit_h (2.56GB)\",       \"grounding_dino_model\": \"GroundingDINO_SwinT_OGC
+    (694MB)\",       \"threshold\": 0.3,       \"detail_range\": 16,       \"black_point\":
+    0.15,       \"white_point\": 0.99,       \"process_detail\": true,       \"prompt\":
+    \"subject\",       \"image\": [         \"270\",         0       ]     },    
+    \"class_type\": \"LayerMask: SegmentAnythingUltra\",     \"_meta\": {       \"title\":
+    \"LayerMask: SegmentAnythingUltra\"     }   },   \"274\": {     \"inputs\": {      
+    \"images\": [         \"273\",         0       ]     },     \"class_type\": \"PreviewImage\",    
+    \"_meta\": {       \"title\": \"Preview Image\"     }   },   \"275\": {     \"inputs\":
+    {       \"images\": [         \"234\",         0       ]     },     \"class_type\":
+    \"PreviewImage\",     \"_meta\": {       \"title\": \"Preview Image\"     }  
+    },   \"276\": {     \"inputs\": {       \"filename_prefix\": \"UnityExport\",      
+    \"images\": [         \"7\",         0       ]     },     \"class_type\": \"SaveImage\",    
+    \"_meta\": {       \"title\": \"Save Image\"     }   },   \"277\": {     \"inputs\":
+    {       \"image\": \"UnityFace\",       \"keep_alpha_channel\": false,      
+    \"output_mode\": false     },     \"class_type\": \"LoadImageFromUrl\",     \"_meta\":
+    {       \"title\": \"Load Image From URL Face\"     }   },   \"278\": {     \"inputs\":
+    {       \"image\": \"UnityBg\",       \"keep_alpha_channel\": false,       \"output_mode\":
+    false     },     \"class_type\": \"LoadImageFromUrl\",     \"_meta\": {      
+    \"title\": \"Load Image From URL BG\"     }   } }"
+--- !u!114 &4384160098087201732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017149671408762707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c8341c5dc26d3e4bbb6cc0c655ae5ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outputImage: {fileID: 0}
+--- !u!114 &4316891331438576607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017149671408762707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7ebcfd1775a21944b232b6724737c2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  comfyImageCtr: {fileID: 4384160098087201732}
+  promptID: 
+--- !u!114 &5321332914737208611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1017149671408762707}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    m_Quality: 3
+    m_FrameInfluence: 0.1
+    m_JitterScale: 1
+    m_MipBias: 0
+    m_VarianceClampScale: 0.9
+    m_ContrastAdaptiveSharpening: 0
