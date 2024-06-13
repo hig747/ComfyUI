@@ -6,6 +6,26 @@ using System.Text;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.Networking;
+using UnityEngine.UIElements;
+
+
+[Serializable]
+public class PRORESS_DATA_CORE
+{
+    public int value;
+    public int max;
+    public string prompt_id;
+    public string node;
+}
+
+[Serializable]
+public class PRORESS_DATA
+{
+    public string type;
+    public PRORESS_DATA_CORE data;
+
+}
+
 
 public class ResponseDataWebsocket
 {
@@ -17,10 +37,13 @@ public class ComfyWebsocket : MonoBehaviour
     private string clientId = Guid.NewGuid().ToString();
     private ClientWebSocket ws = new ClientWebSocket();
 
+    int cnt = 0;
+
+
     public ComfyImageCtr comfyImageCtr;
     async void Start()
     {
-     
+
         await ws.ConnectAsync(new Uri($"ws://{serverAddress}/ws?clientId={clientId}"), CancellationToken.None);
         StartListening();
 
@@ -52,17 +75,45 @@ public class ComfyWebsocket : MonoBehaviour
 
             string response = stringBuilder.ToString();
             Debug.Log("Received: " + response);
-        
-           if (response.Contains("\"queue_remaining\": 0"))
+
+            string keyword = "\"value\": ";
+            int idx = response.IndexOf(keyword);
+
+            if ( idx != -1)
+            {
+                string num = response.Substring(idx + keyword.Length);
+
+                int endIndex = num.IndexOf(',');
+
+                // Extracting the filename value (assuming it's wrapped in quotes)
+                string num2 = num.Substring(0, endIndex).Trim();
+
+                cnt = int.Parse( num2);
+
+                Debug.Log("cnt : " + cnt.ToString());
+            }
+/*
+            {
+
+                
+                                PRORESS_DATA json = JsonUtility.FromJson<PRORESS_DATA>(response);
+                                if (json != null)
+                                {
+                                    Debug.Log(json.data.value.ToString() + "/" + json.data.max.ToString());
+                                }
+                
+            }
+*/
+            if (response.Contains("\"queue_remaining\": 0"))
             {
                 comfyImageCtr.RequestFileName(promptID);
             }
-        
+
 
         }
     }
 
-   
+
 
     void OnDestroy()
     {
