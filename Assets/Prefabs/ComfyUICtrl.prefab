@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4316891331438576607}
   - component: {fileID: 5321332914737208611}
   m_Layer: 0
-  m_Name: ComfyUIctr
+  m_Name: ComfyUICtrl
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
