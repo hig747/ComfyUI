@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using UnityEditor.ShaderGraph.Internal;
 
 [System.Serializable]
 public class ResponseData
@@ -12,29 +13,37 @@ public class ResponseData
 public class ComfyPromptCtr : MonoBehaviour
 {
 
-    public InputField pInput,nInput, humanImageInput,bgImageInput,promptJsonInput;
+    public InputField pInput, nInput, humanImageInput, bgImageInput, cfgInput,weightInput,promptJsonInput;
 
 
 
     private void Start()
     {
-       // QueuePrompt("pretty man","watermark");
+        // QueuePrompt("pretty man","watermark");
     }
 
     public void QueuePrompt()
     {
-        StartCoroutine(QueuePromptCoroutine(pInput.text,nInput.text, humanImageInput.text, bgImageInput.text  ));
+        StartCoroutine(QueuePromptCoroutine(pInput.text, nInput.text, cfgInput.text, weightInput.text, humanImageInput.text, bgImageInput.text));
     }
-    private IEnumerator QueuePromptCoroutine(string positivePrompt,string negativePrompt, string humanImage, string bgImage )
+    private IEnumerator QueuePromptCoroutine(string positivePrompt, string negativePrompt, string cfgValue, string weightValue, string humanImage, string bgImage)
     {
         string url = "http://127.0.0.1:8188/prompt";
+        string dataPath = "file://D:/Unity/ComfyUI/Assets/StreamingAssets/";
+
         string promptText = GeneratePromptJson();
 
-                promptText = promptText.Replace("Pprompt", positivePrompt);
-                promptText = promptText.Replace("Nprompt", negativePrompt);
+        promptText = promptText.Replace("UnityPprompt", positivePrompt);
+        promptText = promptText.Replace("UnityNprompt", negativePrompt);
 
-        promptText = promptText.Replace("human.png", humanImage);
-        promptText = promptText.Replace("bg.png", bgImage);
+        promptText = promptText.Replace("UnityCfg",cfgValue);
+        promptText = promptText.Replace("UnityWeight", weightValue);
+
+
+        //        nblack and white, bad eyes, deformed eyes, deformed face
+
+        promptText = promptText.Replace("UnityFace", dataPath+humanImage);
+        promptText = promptText.Replace("UnityBg", dataPath+bgImage);
 
 
         Debug.Log(promptText);
@@ -58,21 +67,21 @@ public class ComfyPromptCtr : MonoBehaviour
             ResponseData data = JsonUtility.FromJson<ResponseData>(request.downloadHandler.text);
             Debug.Log("Prompt ID: " + data.prompt_id);
             GetComponent<ComfyWebsocket>().promptID = data.prompt_id;
-           // GetComponent<ComfyImageCtr>().RequestFileName(data.prompt_id);
+            // GetComponent<ComfyImageCtr>().RequestFileName(data.prompt_id);
         }
     }
     public string promptJson;
 
-private string GeneratePromptJson()
+    private string GeneratePromptJson()
     {
- string guid = Guid.NewGuid().ToString();
+        string guid = Guid.NewGuid().ToString();
 
-    string promptJsonWithGuid = $@"
+        string promptJsonWithGuid = $@"
 {{
     ""id"": ""{guid}"",
     ""prompt"": {promptJson}
 }}";
 
-    return promptJsonWithGuid;
+        return promptJsonWithGuid;
     }
 }

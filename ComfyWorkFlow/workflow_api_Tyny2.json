@@ -10,7 +10,7 @@
   },
   "4": {
     "inputs": {
-      "text": "Pprompt",
+      "text": "UnityPprompt",
       "clip": [
         "2",
         1
@@ -23,7 +23,7 @@
   },
   "5": {
     "inputs": {
-      "text": "Nprompt,nblack and white, bad eyes, deformed eyes, deformed face",
+      "text": "UniyNprompt",
       "clip": [
         "2",
         1
@@ -54,7 +54,7 @@
     "inputs": {
       "seed": 1034487527166148,
       "steps": 30,
-      "cfg": 2,
+      "cfg": UnityCfg,
       "sampler_name": "dpmpp_2m_sde",
       "scheduler": "karras",
       "denoise": 1,
@@ -289,7 +289,7 @@
   },
   "232": {
     "inputs": {
-      "weight": 0.45,
+      "weight": UnityWeight,
       "weight_type": "linear",
       "combine_embeds": "concat",
       "start_at": 0.1,
@@ -473,7 +473,7 @@
   },
   "277": {
     "inputs": {
-      "image": "file://D:/Unity/ComfyUI/Assets/StreamingAssets/human.png",
+      "image": "UnityFace",
       "keep_alpha_channel": false,
       "output_mode": false
     },
@@ -484,7 +484,7 @@
   },
   "278": {
     "inputs": {
-      "image": "file://D:/Unity/ComfyUI/Assets/StreamingAssets/bg.png",
+      "image": "UnityBg",
       "keep_alpha_channel": false,
       "output_mode": false
     },
