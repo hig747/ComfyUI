@@ -2673,6 +2673,122 @@ PrefabInstance:
       objectReference: {fileID: 5673245711006877450}
     - target: {fileID: 6043158891505862295, guid: 5d8ac79a9354c7a4ab2686beb5e9c5cf,
         type: 3}
+      propertyPath: promptJson
+      value: "{   \"2\": {     \"inputs\": {       \"ckpt_name\": \"beautifulRealistic_v7.safetensors\"    
+        },     \"class_type\": \"CheckpointLoaderSimple\",     \"_meta\": {      
+        \"title\": \"Load Checkpoint\"     }   },   \"4\": {     \"inputs\": {      
+        \"text\": \"\",       \"clip\": [         \"2\",         1       ]     },    
+        \"class_type\": \"CLIPTextEncode\",     \"_meta\": {       \"title\": \"UnityPPrompt\"    
+        }   },   \"5\": {     \"inputs\": {       \"text\": \"\",       \"clip\":
+        [         \"2\",         1       ]     },     \"class_type\": \"CLIPTextEncode\",    
+        \"_meta\": {       \"title\": \"UnityNPrompt\"     }   },   \"7\": {    
+        \"inputs\": {       \"samples\": [         \"19\",         0       ],      
+        \"vae\": [         \"2\",         2       ]     },     \"class_type\": \"VAEDecode\",    
+        \"_meta\": {       \"title\": \"VAE Decode\"     }   },   \"19\": {     \"inputs\":
+        {       \"seed\": 1034487527166148,       \"steps\": 30,       \"cfg\": 2,      
+        \"sampler_name\": \"dpmpp_2m_sde\",       \"scheduler\": \"karras\",      
+        \"denoise\": 1,       \"model\": [         \"235\",         0       ],      
+        \"positive\": [         \"77\",         0       ],       \"negative\": [        
+        \"77\",         1       ],       \"latent_image\": [         \"50\",        
+        0       ]     },     \"class_type\": \"KSampler\",     \"_meta\": {      
+        \"title\": \"UnityKSampler\"     }   },   \"36\": {     \"inputs\": {      
+        \"images\": [         \"7\",         0       ]     },     \"class_type\":
+        \"PreviewImage\",     \"_meta\": {       \"title\": \"Preview Image\"    
+        }   },   \"37\": {     \"inputs\": {       \"model_path\": \"IC-Light\\\\iclight_sd15_fc.safetensors\",      
+        \"model\": [         \"2\",         0       ]     },     \"class_type\":
+        \"LoadAndApplyICLightUnet\",     \"_meta\": {       \"title\": \"Load And
+        Apply IC-Light\"     }   },   \"42\": {     \"inputs\": {       \"images\":
+        [         \"53\",         0       ]     },     \"class_type\": \"PreviewImage\",    
+        \"_meta\": {       \"title\": \"Preview Image\"     }   },   \"50\": {    
+        \"inputs\": {       \"pixels\": [         \"205\",         0       ],      
+        \"vae\": [         \"2\",         2       ]     },     \"class_type\": \"VAEEncode\",    
+        \"_meta\": {       \"title\": \"VAE Encode\"     }   },   \"53\": {     \"inputs\":
+        {       \"width\": 512,       \"height\": 512,       \"interpolation\": \"lanczos\",      
+        \"method\": \"stretch\",       \"condition\": \"always\",       \"multiple_of\":
+        0,       \"image\": [         \"279\",         0       ]     },     \"class_type\":
+        \"ImageResize+\",     \"_meta\": {       \"title\": \"\U0001F527 Image Resize\"    
+        }   },   \"77\": {     \"inputs\": {       \"multiplier\": 0.18,       \"positive\":
+        [         \"4\",         0       ],       \"negative\": [         \"5\",        
+        0       ],       \"vae\": [         \"2\",         2       ],       \"foreground\":
+        [         \"78\",         0       ]     },     \"class_type\": \"ICLightConditioning\",    
+        \"_meta\": {       \"title\": \"IC-Light Conditioning\"     }   },   \"78\":
+        {     \"inputs\": {       \"pixels\": [         \"53\",         0       ],      
+        \"vae\": [         \"2\",         2       ]     },     \"class_type\": \"VAEEncode\",    
+        \"_meta\": {       \"title\": \"VAE Encode\"     }   },   \"146\": {    
+        \"inputs\": {       \"factor\": 0.4,       \"interpolation_mode\": \"bicubic\",      
+        \"image\": [         \"78\",         0       ]     },     \"class_type\":
+        \"JWImageResizeByFactor\",     \"_meta\": {       \"title\": \"Image Resize
+        by Factor\"     }   },   \"204\": {     \"inputs\": {       \"shape\": \"circle\",      
+        \"frames\": 1,       \"location_x\": 100,       \"location_y\": 125,      
+        \"grow\": 0,       \"frame_width\": [         \"53\",         1       ],      
+        \"frame_height\": [         \"53\",         2       ],       \"shape_width\":
+        512,       \"shape_height\": 512     },     \"class_type\": \"CreateShapeMask\",    
+        \"_meta\": {       \"title\": \"UnitySetLight\"     }   },   \"205\": {    
+        \"inputs\": {       \"mask\": [         \"207\",         0       ]     },    
+        \"class_type\": \"MaskToImage\",     \"_meta\": {       \"title\": \"Convert
+        Mask to Image\"     }   },   \"206\": {     \"inputs\": {       \"expand\":
+        0,       \"incremental_expandrate\": 0,       \"tapered_corners\": true,      
+        \"flip_input\": false,       \"blur_radius\": 11.700000000000001,       \"lerp_alpha\":
+        1,       \"decay_factor\": 1,       \"fill_holes\": false,       \"mask\":
+        [         \"204\",         0       ]     },     \"class_type\": \"GrowMaskWithBlur\",    
+        \"_meta\": {       \"title\": \"Grow Mask With Blur\"     }   },   \"207\":
+        {     \"inputs\": {       \"min\": 0,       \"max\": 0.72,       \"mask\":
+        [         \"206\",         0       ]     },     \"class_type\": \"RemapMaskRange\",    
+        \"_meta\": {       \"title\": \"Remap Mask Range\"     }   },   \"208\":
+        {     \"inputs\": {       \"images\": [         \"205\",         0      
+        ]     },     \"class_type\": \"PreviewImage\",     \"_meta\": {       \"title\":
+        \"Preview Image\"     }   },   \"232\": {     \"inputs\": {       \"weight\":
+        0.45,       \"weight_type\": \"linear\",       \"combine_embeds\": \"concat\",      
+        \"start_at\": 0.1,       \"end_at\": 1,       \"embeds_scaling\": \"V only\",      
+        \"model\": [         \"37\",         0       ],       \"ipadapter\": [        
+        \"236\",         0       ],       \"image\": [         \"234\",         0      
+        ],       \"clip_vision\": [         \"233\",         0       ]     },    
+        \"class_type\": \"IPAdapterAdvanced\",     \"_meta\": {       \"title\":
+        \"UnityIPAdapter\"     }   },   \"233\": {     \"inputs\": {       \"clip_name\":
+        \"CLIP-ViT-H-14-laion2B-s32B-b79K.safetensors\"     },     \"class_type\":
+        \"CLIPVisionLoader\",     \"_meta\": {       \"title\": \"Load CLIP Vision\"    
+        }   },   \"234\": {     \"inputs\": {       \"interpolation\": \"LANCZOS\",      
+        \"crop_position\": \"center\",       \"sharpening\": 0.15,       \"image\":
+        [         \"260\",         0       ]     },     \"class_type\": \"PrepImageForClipVision\",    
+        \"_meta\": {       \"title\": \"Prep Image For ClipVision\"     }   },  
+        \"235\": {     \"inputs\": {       \"model\": [         \"232\",        
+        0       ]     },     \"class_type\": \"DifferentialDiffusion\",     \"_meta\":
+        {       \"title\": \"Differential Diffusion\"     }   },   \"236\": {    
+        \"inputs\": {       \"ipadapter_file\": \"ip-adapter-plus_sd15.safetensors\"    
+        },     \"class_type\": \"IPAdapterModelLoader\",     \"_meta\": {       \"title\":
+        \"IPAdapter Model Loader\"     }   },   \"260\": {     \"inputs\": {      
+        \"width\": 512,       \"height\": 512,       \"interpolation\": \"lanczos\",      
+        \"method\": \"stretch\",       \"condition\": \"always\",       \"multiple_of\":
+        0,       \"image\": [         \"278\",         0       ]     },     \"class_type\":
+        \"ImageResize+\",     \"_meta\": {       \"title\": \"\U0001F527 Image Resize\"    
+        }   },   \"270\": {     \"inputs\": {       \"factor\": 1,       \"interpolation_mode\":
+        \"bicubic\",       \"image\": [         \"277\",         0       ]     },    
+        \"class_type\": \"JWImageResizeByFactor\",     \"_meta\": {       \"title\":
+        \"Image Resize by Factor\"     }   },   \"274\": {     \"inputs\": {      
+        \"images\": [         \"279\",         0       ]     },     \"class_type\":
+        \"PreviewImage\",     \"_meta\": {       \"title\": \"Preview Image\"    
+        }   },   \"275\": {     \"inputs\": {       \"images\": [         \"234\",        
+        0       ]     },     \"class_type\": \"PreviewImage\",     \"_meta\": {      
+        \"title\": \"Preview Image\"     }   },   \"276\": {     \"inputs\": {      
+        \"filename_prefix\": \"UnityOutput\",       \"images\": [         \"7\",        
+        0       ]     },     \"class_type\": \"SaveImage\",     \"_meta\": {      
+        \"title\": \"UnitySaveImage\"     }   },   \"277\": {     \"inputs\": {      
+        \"image\": \"/view?subfolder=&type=input&filename=human+%282%29.png\",      
+        \"keep_alpha_channel\": false,       \"output_mode\": false     },     \"class_type\":
+        \"LoadImageFromUrl\",     \"_meta\": {       \"title\": \"UnityLoadFace\"    
+        }   },   \"278\": {     \"inputs\": {       \"image\": \"/view?subfolder=&type=input&filename=bg2+%281%29.png\",      
+        \"keep_alpha_channel\": false,       \"output_mode\": false     },     \"class_type\":
+        \"LoadImageFromUrl\",     \"_meta\": {       \"title\": \"UnityLoadBG\"    
+        }   },   \"279\": {     \"inputs\": {       \"rembg_session\": [        
+        \"280\",         0       ],       \"image\": [         \"270\",         0      
+        ]     },     \"class_type\": \"ImageRemoveBackground+\",     \"_meta\": {      
+        \"title\": \"\U0001F527 Image Remove Background\"     }   },   \"280\": {    
+        \"inputs\": {       \"model\": \"u2netp: lightweight general purpose\",      
+        \"providers\": \"DirectML\"     },     \"class_type\": \"RemBGSession+\",    
+        \"_meta\": {       \"title\": \"\U0001F527 RemBG Session\"     }   } }"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6043158891505862295, guid: 5d8ac79a9354c7a4ab2686beb5e9c5cf,
+        type: 3}
       propertyPath: weightInput
       value: 
       objectReference: {fileID: 4602444428896316371}
