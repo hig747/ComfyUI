@@ -62,7 +62,7 @@ public void RequestFileName(string id){
     string ExtractFilename(string jsonString)
     {
         // Step 1: Identify the part of the string that contains the "filename" key
-        string OutputKey = "UnityExport_";
+        string OutputKey = "UnityOutput_";
         string keyToLookFor = "\"filename\":";
 
 

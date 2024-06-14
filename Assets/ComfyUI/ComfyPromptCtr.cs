@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using UnityEditor.ShaderGraph.Internal;
+using Unity.Mathematics;
 
 
 
@@ -18,7 +19,7 @@ public class ResponseData
 public class ComfyPromptCtr : MonoBehaviour
 {
 
-    public InputField pInput, nInput, humanImageInput, bgImageInput, cfgInput,weightInput,promptJsonInput;
+    public InputField pInput, nInput, humanImageInput, bgImageInput, cfgInput, weightInput, promptJsonInput;
 
 
 
@@ -32,29 +33,24 @@ public class ComfyPromptCtr : MonoBehaviour
         StartCoroutine(QueuePromptCoroutine(pInput.text, nInput.text, cfgInput.text, weightInput.text, humanImageInput.text, bgImageInput.text));
     }
 
-    string ChangeJsonParam( string json, string titleName, string targetName, string param )
+    string ChangeJsonParam(string json, string titleName, string targetName, string param)
     {
-        string fs,es;
+        string fs, es;
 
         int lastIdx = json.IndexOf(titleName);
-        if( lastIdx != -1)
+        if (lastIdx != -1)
         {
-           int idx = json.LastIndexOf(targetName,lastIdx);
-           int paramStIdx = json.IndexOf(":", idx + 1);
+            int idx = json.LastIndexOf("\"" + targetName+ "\"", lastIdx);
+            int paramStIdx = json.IndexOf(":", idx + 1);
             int paramEdIdx = json.IndexOf(",", paramStIdx + 1);
 
-            fs = json.Substring(0, paramStIdx+1);
+            fs = json.Substring(0, paramStIdx + 1);
             es = json.Substring(paramEdIdx);
 
-            return( fs + param + es);
+            return (fs + param + es);
         }
-        return ( json );
+        return (json);
     }
-
-
-
-
-
 
     private IEnumerator QueuePromptCoroutine(string positivePrompt, string negativePrompt, string cfgValue, string weightValue, string humanImage, string bgImage)
     {
@@ -64,23 +60,31 @@ public class ComfyPromptCtr : MonoBehaviour
         string promptText = GeneratePromptJson();
 
         promptText = ChangeJsonParam(promptText, "UnityLoadFace", "image", "\"" + dataPath + humanImage + "\"");
+        promptText = ChangeJsonParam(promptText, "UnityLoadBG", "image", "\"" + dataPath + bgImage + "\"");
         promptText = ChangeJsonParam(promptText, "UnityKSampler", "cfg", cfgValue.ToString());
+        promptText = ChangeJsonParam(promptText, "UnityIPAdapter", "weight", weightValue.ToString());
+        promptText = ChangeJsonParam(promptText, "UnitySetLight", "location_x", UnityEngine.Random.Range(0, 512).ToString());
+        promptText = ChangeJsonParam(promptText, "UnitySetLight", "location_y", UnityEngine.Random.Range(0, 512).ToString());
 
-/*
-        promptText = promptText.Replace("UnitySeed", Time.frameCount.ToString());
-
-        promptText = promptText.Replace("UnityPprompt", positivePrompt);
-        promptText = promptText.Replace("UnityNprompt", negativePrompt);
-
-        promptText = promptText.Replace("UnityCfg",cfgValue);
-        promptText = promptText.Replace("UnityWeight", weightValue);
+        promptText = ChangeJsonParam(promptText, "UnityPPrompt", "text", "\"" + positivePrompt + "\"");
+        //promptText = ChangeJsonParam(promptText, "UnityNPrompt", "text", "\"" + negativePrompt + "\"");
 
 
-        //        nblack and white, bad eyes, deformed eyes, deformed face
+        /*
+                promptText = promptText.Replace("UnitySeed", Time.frameCount.ToString());
 
-        promptText = promptText.Replace("UnityFace", dataPath+humanImage);
-        promptText = promptText.Replace("UnityBg", dataPath+bgImage);
-*/
+                promptText = promptText.Replace("UnityPprompt", positivePrompt);
+                promptText = promptText.Replace("UnityNprompt", negativePrompt);
+
+                promptText = promptText.Replace("UnityCfg",cfgValue);
+                promptText = promptText.Replace("UnityWeight", weightValue);
+
+
+                //        nblack and white, bad eyes, deformed eyes, deformed face
+
+                promptText = promptText.Replace("UnityFace", dataPath+humanImage);
+                promptText = promptText.Replace("UnityBg", dataPath+bgImage);
+        */
 
         Debug.Log(promptText);
 
